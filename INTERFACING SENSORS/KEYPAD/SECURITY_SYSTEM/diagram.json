@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "HIMANSHU SINGH",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -366.8, "left": 63.2, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -185.6,
+      "left": -272.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -51.6,
+      "left": -53.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -51.6,
+      "left": -92.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -103.2,
+      "left": 280.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "keypad1:R1", "uno:9", "green", [ "v0" ] ],
+    [ "keypad1:R2", "uno:8", "green", [ "v0" ] ],
+    [ "keypad1:R3", "uno:7", "green", [ "v0" ] ],
+    [ "keypad1:R4", "uno:6", "green", [ "v0" ] ],
+    [ "keypad1:C1", "uno:5", "green", [ "v0" ] ],
+    [ "keypad1:C2", "uno:4", "green", [ "v0" ] ],
+    [ "keypad1:C3", "uno:3", "green", [ "v0" ] ],
+    [ "keypad1:C4", "uno:2", "green", [ "v0" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h-28.8", "v384", "h19.2" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-19.2", "v345.7", "h38.4" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-67.2", "v345.8", "h9.6" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-96", "v336.3", "h624", "v-9.6" ] ],
+    [ "led3:C", "uno:GND.1", "black", [ "v19.2", "h86.8", "v-38.4", "h105.6" ] ],
+    [ "led3:A", "uno:13", "green", [ "v19.2", "h76.8", "v-38.4", "h105.6", "v0", "h9.6" ] ],
+    [ "led2:A", "uno:12", "green", [ "v28.8", "h38.4", "v-57.6", "h124.9" ] ],
+    [ "led2:C", "uno:GND.1", "black", [ "v19.2", "h48.4", "v-38.4", "h105.6", "v-9.6" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "h-192", "v28.2" ] ],
+    [ "bz1:2", "uno:11", "green", [ "v9.6", "h-173.2" ] ]
+  ],
+  "dependencies": {}
+}
